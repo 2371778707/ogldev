@@ -20,18 +20,14 @@
 
 #include <math.h>
 #include <GL/glew.h>
+#include <Magick++.h>
 #include <string>
-#ifndef WIN32
 #include <sys/time.h>
 #include <unistd.h>
-#endif
 #include <sys/types.h>
 
 #include "engine_common.h"
 #include "ogldev_app.h"
-#include "ogldev_util.h"
-#include "ogldev_pipeline.h"
-#include "ogldev_camera.h"
 #include "lighting_technique.h"
 #include "ogldev_backend.h"
 #include "ogldev_camera.h"
@@ -88,16 +84,10 @@ public:
         m_LightingTech.SetMatSpecularIntensity(0.0f);
         m_LightingTech.SetMatSpecularPower(0);
 
-        if (!m_mesh.LoadMesh("../Content/crytek_sponza/sponza.obj")) {
-            return false;            
+        if (!m_mesh.LoadMesh("../content/crytek_sponza/sponza.obj")) {
+            return false;
         }
                 
-#ifndef WIN32
-        // Disabled for now because it somehow clashes with the regular rendering...
- //       if (!m_fontRenderer.InitFontRenderer()) {
-   //         return false;
-   //     }
-#endif        	      
         return true;
     }
 
