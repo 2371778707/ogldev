@@ -23,6 +23,9 @@ Texture::Texture(GLenum TextureTarget, const std::string& FileName)
 {
     m_textureTarget = TextureTarget;
     m_fileName      = FileName;
+  #ifndef _WIN32
+    std::replace(m_fileName.begin(), m_fileName.end(), '\\', '/');
+  #endif
 }
 
 

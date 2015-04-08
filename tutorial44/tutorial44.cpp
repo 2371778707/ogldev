@@ -84,7 +84,8 @@ public:
         m_LightingTech.SetMatSpecularIntensity(0.0f);
         m_LightingTech.SetMatSpecularPower(0);
 
-        if (!m_mesh.LoadMesh("../content/crytek_sponza/sponza.obj")) {
+        // http://graphics.cs.williams.edu/data/meshes/crytek-sponza.zip
+        if (!m_mesh.LoadMesh("../content/crytek-sponza/sponza.obj")) {
             return false;
         }
                 
